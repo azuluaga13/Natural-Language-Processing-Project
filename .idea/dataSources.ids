@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Sqlite (Xerial) - identifier.sqlite" uuid="c7e8974c-bc80-48c9-971a-b70f9a0cd959">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Sqlite (Xerial) - oscar-movie_imdb.sqlite" uuid="48d5d137-d00b-46f9-9974-32c2b6771633">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="Actor" schema="" catalog="" type="TABLE">
+      <column name="actor_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="movie_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="actor_id,movie_id"/>
+      <foreign-key name="#FAKE_Actor_1" columns="movie_id" ref-table="Movie" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_Actor_2" columns="actor_id" ref-table="Person" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="Director" schema="" catalog="" type="TABLE">
+      <column name="director_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="movie_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="director_id,movie_id"/>
+      <foreign-key name="#FAKE_Director_1" columns="movie_id" ref-table="Movie" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_Director_2" columns="director_id" ref-table="Person" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="Movie" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="year" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="rating" sqlType="VARCHAR(5)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="runtime" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="genre" sqlType="VARCHAR(16)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="earnings_rank" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="Oscar" schema="" catalog="" type="TABLE">
+      <column name="movie_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="person_id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR(23)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="year" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <primary-key columns="person_id,type,year"/>
+      <foreign-key name="#FAKE_Oscar_1" columns="person_id" ref-table="Person" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_Oscar_2" columns="movie_id" ref-table="Movie" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+    </table>
+    <table name="Person" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="CHAR(7)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(64)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="dob" sqlType="DATE" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="pob" sqlType="VARCHAR(128)" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+  </data-source>
+</component>
